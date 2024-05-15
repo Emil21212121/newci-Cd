@@ -22,7 +22,7 @@
     "@babel/cli": "^7.24.1",
     "@babel/core": "^7.24.4",
     "@babel/node": "^7.23.9",
-    "@babel/preset-env": "^7.24.4",
+    "@babel/preset-env": "^7.24.5",
     "@faker-js/faker": "^8.4.1",
     "@jest/types": "^29.6.3",
     "@types/jest": "^29.5.12",
