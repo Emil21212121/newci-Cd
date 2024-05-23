@@ -19,8 +19,8 @@
   "keywords": [],
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.24.1",
-    "@babel/core": "^7.24.4",
+    "@babel/cli": "^7.24.5",
+    "@babel/core": "^7.24.5",
     "@babel/node": "^7.23.9",
     "@babel/preset-env": "^7.24.5",
     "@faker-js/faker": "^8.4.1",
@@ -47,9 +47,12 @@
   "jest": {
     "reporters": [
       "default",
-      ["./node_modules/jest-html-reporters", {
-        "pageTitle": "Test Report"
-      }]
+      [
+        "./node_modules/jest-html-reporters",
+        {
+          "pageTitle": "Test Report"
+        }
+      ]
     ]
   }
 }
