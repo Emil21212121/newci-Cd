@@ -31,9 +31,6 @@ export const configPlaceOrder = {
   
 };
 
-export const configPetStatus = ['pending', 'sold' ,'available'];
-
-export const configPetID = 1;
 
 export const configCreateWithList = [
   {
@@ -48,7 +45,6 @@ export const configCreateWithList = [
   }
 ]
 
-export const configUserName = "jack"
 
 export const configUserRefresh = {
   "id": 0,
@@ -59,9 +55,4 @@ export const configUserRefresh = {
   "password": "123",
   "phone": "string",
   "userStatus": 0
-}
-
-export const configUserLogin = {
-  username: 'Nikola',
-  password: '123'
 }

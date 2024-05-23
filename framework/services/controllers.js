@@ -6,16 +6,16 @@
     export const placeOrder = async () => {
         const requestPlaceOrder = await http.post ('v2/store/order', {...configPlaceOrder});
         return {
-            headers: requestPlaceOrder.headersl,
+            headers: requestPlaceOrder.headers,
             status: requestPlaceOrder.status,
             data: requestPlaceOrder.data
         }
     } 
 
-    export const petAdd = async () => {
-        const requestPetAdd = await http.put('/v2/pet', {...configPet},);
+    export const petAdd = async (petDataa) => {
+        const requestPetAdd = await http.put('/v2/pet', {...petDataa},);
         return {
-            headers: requestPetAdd.headersl,
+            headers: requestPetAdd.headers,
             status: requestPetAdd.status,
             data: requestPetAdd.data
         }
@@ -92,4 +92,47 @@ export const userLogin = async (user) => {
         data: requestUserLogin.data
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
