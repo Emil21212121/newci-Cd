@@ -1,4 +1,4 @@
-    import { configApi, configPlaceOrder, configPet, configCreateWithList, configUserRefresh,} from "../config/config";
+    import { configApi, configPlaceOrder, configPet, configCreateWithList, configUserRefresh,} from "c:/Users/User/qajs-2024-03/src/framework/config/config";
     import http from "../axios/http.js"
 
 
