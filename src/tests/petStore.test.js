@@ -1,5 +1,5 @@
-import { placeOrder, petAdd, statusPet, petID, inventoryMap, CreateWithList, userName, userRefresh, userLogin} from "c:/Users/User/qajs-2024-03/src/framework/services/controllers";
-import { configUserName, configUserLogin, configPet } from "c:/Users/User/qajs-2024-03/src/framework/config/config";
+import { placeOrder, petAdd, statusPet, petID, inventoryMap, CreateWithList, userName, userRefresh, userLogin} from "../framework/services/controllers";
+import { configUserName, configUserLogin, configPet } from "../framework/config/config";
 describe ("Pet Store tests", () => {
 
     it ("Place order", async () => {
