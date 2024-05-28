@@ -36,9 +36,6 @@ jobs:
     - name: Run tests with Jest HTML Reporter
       run: npm test -- --reporters=jest-html-reporters
 
-    - name: Check if jest_html_reporters.html file exists
-      run: if [ ! -f jest_html_reporters.html ]; then echo "File jest_html_reporters.html does not exist."; exit 1; fi
-
     - name: send telegram message on push
       uses: appleboy/telegram-action@master
       with:
@@ -56,8 +53,10 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
       with:
-        path: 'jest_html_reporters.html'
+        path: './jest-html-reporters'
 
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v1
+
+
