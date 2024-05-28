@@ -51,6 +51,8 @@
       [
         "./node_modules/jest-html-reporters",
         {
+          "publicPath": "./jest-html-report",
+          "filename": "index.html",
           "pageTitle": "Test Report"
         }
       ]
