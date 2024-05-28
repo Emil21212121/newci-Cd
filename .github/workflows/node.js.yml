@@ -6,6 +6,15 @@ on:
   pull_request:
     branches: [ "lesson/response-validation" ]
 
+permissions: # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   build:
 
@@ -31,7 +40,7 @@ jobs:
       uses: appleboy/telegram-action@master
       with:
         to: -4240419843
-        token: ${{secrets.TELEGRAM_TOKEN}}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
         photo: ./foto.png
         message: |
           ${{ github.actor }} created commit new view:
@@ -39,4 +48,15 @@ jobs:
 
           Repository: ${{ github.repository }}
 
-          See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+          See changes: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: './jest-html-report'
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
+
+
