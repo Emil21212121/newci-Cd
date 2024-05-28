@@ -3,8 +3,15 @@ import { configUserName, configUserLogin, configPet } from "../framework/config/
 describe ("Pet Store tests", () => {
 
     it ("Place order", async () => {
-
-        const responsePlaceOrder = await placeOrder();
+        const order = {
+            "id": 1211,
+            "petId": 1121,
+            "quantity": 0,
+            "shipDate": "2024-05-09T15:54:14.587Z",
+            "status": "placed",
+            "complete": true
+          };
+        const responsePlaceOrder = await placeOrder(order);
         expect(responsePlaceOrder.status).toBe(200)
         console.log(responsePlaceOrder.data)
         expect(responsePlaceOrder.data).toMatchObject({
@@ -20,20 +27,10 @@ describe ("Pet Store tests", () => {
     it ("Add to Pet store", async () => {
         const petData = {
             id: 1,
-            category: {
-                id: 2,
-                name: "cat"
-            },
+            category: {id: 2, name: "cat"},
             name: "kitty",
-            photoUrls: [
-                "string"
-            ],
-            tags: [
-                {
-                    id: 3,
-                    name: "kitten"
-                }
-            ],
+            photoUrls: ["string"],
+            tags: [{id: 3, name: "kitten"}],
             status: "available"
         };
         const responsePetAdd = await petAdd(petData);
@@ -68,7 +65,19 @@ describe ("Pet Store tests", () => {
     })
 
     it ('Create With List', async () => {
-        const responseCreateWithList = await CreateWithList();
+        const list = [
+            {
+              "id": 0,
+              "username": "jack",
+              "firstName": "string",
+              "lastName": "string",
+              "email": "string",
+              "password": "string",
+              "phone": "string",
+              "userStatus": 0
+            }
+          ];
+        const responseCreateWithList = await CreateWithList(list);
         expect(responseCreateWithList.status).toBe(200)
         
     })
@@ -81,7 +90,17 @@ describe ("Pet Store tests", () => {
     })
 
     it ('User Refresh', async () => {
-        const responseUserRefresh = await userRefresh(configUserName);
+        const list = {
+            "id": 0,
+            "username": "Nikola",
+            "firstName": "string",
+            "lastName": "string",
+            "email": "string",
+            "password": "123",
+            "phone": "string",
+            "userStatus": 0
+          };
+        const responseUserRefresh = await userRefresh(list);
         expect(responseUserRefresh.status).toBe(200)
         console.log(responseUserRefresh.data)
     })

@@ -3,8 +3,8 @@
 
 
 
-    export const placeOrder = async () => {
-        const requestPlaceOrder = await http.post ('v2/store/order', {...configPlaceOrder});
+    export const placeOrder = async (order) => {
+        const requestPlaceOrder = await http.post ('v2/store/order', {...order});
         return {
             headers: requestPlaceOrder.headers,
             status: requestPlaceOrder.status,
@@ -52,8 +52,8 @@ export const inventoryMap = async () => {
     }
 }
 
-export const CreateWithList = async () => {
-    const requestCreateWithList = await http.post ('/v2/user/createWithList', [...configCreateWithList]);   
+export const CreateWithList = async (list) => {
+    const requestCreateWithList = await http.post ('/v2/user/createWithList', [...list]);   
     return {
         headers: requestCreateWithList.headers,
         status: requestCreateWithList.status,
@@ -71,7 +71,7 @@ export const userName = async (userName) => {
 }
 
 export const userRefresh = async (userName) => {
-    const requestUserRefresh = await http.put (`/v2/user/${userName}`, {...configUserRefresh});
+    const requestUserRefresh = await http.put (`/v2/user/${userName.username}`, {...userName});
     return {
         headers: requestUserRefresh.headers,
         status: requestUserRefresh.status,
@@ -92,13 +92,6 @@ export const userLogin = async (user) => {
         data: requestUserLogin.data
     }
 }
-
-
-
-
-
-
-
 
 
 

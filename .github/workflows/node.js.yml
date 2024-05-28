@@ -26,3 +26,17 @@ jobs:
     - run: npm run build --if-present
     - name: Run tests with Jest HTML Reporter
       run: npm test -- --reporters=jest-html-reporters
+
+       - name: send telegram message on push
+      uses: appleboy/telegram-action@master
+      with:
+        to: -4240419843
+        token: "7263522865:AAF0LYny08mdKvFaX8qCItnI34nRBtaWfQs"
+        photo: 
+        message: |
+          ${{ github.actor }} created commit new view:
+          Commit message: ${{ github.event.commits[0].message }}
+
+          Repository: ${{ github.repository }}
+
+          See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
