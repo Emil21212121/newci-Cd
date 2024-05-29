@@ -35,6 +35,9 @@ jobs:
     - run: npm ci
     - name: Run tests with Jest HTML Reporter
       run: npm test -- --reporters=jest-html-reporters
+      environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     - name: send telegram message on push
       uses: appleboy/telegram-action@master
       with:
