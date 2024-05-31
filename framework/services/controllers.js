@@ -1,4 +1,3 @@
-    import { configApi, configPlaceOrder, configPet, configCreateWithList, configUserRefresh,} from "../config/config";
     import http from "../axios/http.js"
 
 
@@ -12,8 +11,8 @@
         }
     } 
 
-    export const petAdd = async (petDataa) => {
-        const requestPetAdd = await http.put('/v2/pet', {...petDataa},);
+    export const petAdd = async (petData) => {
+        const requestPetAdd = await http.put('/v2/pet', {...petData},);
         return {
             headers: requestPetAdd.headers,
             status: requestPetAdd.status,
@@ -92,15 +91,6 @@ export const userLogin = async (user) => {
         data: requestUserLogin.data
     }
 }
-
-
-
-
-
-
-
-
-
 
 
 
