@@ -115,22 +115,5 @@ describe ("Pet Store tests", () => {
 
 
 
-// Просто тест с задержкой 
-it ("new test asnc", async () => {
-    const order = {
-        "id": 1211,
-        "petId": 1121,
-        "quantity": 0,
-        "shipDate": "2024-05-09T15:54:14.587Z",
-        "status": "placed",
-        "complete": true
-      };
-
-      await new Promise(resolve => {setTimeout(resolve, 10000)})
-      const newtest = await placeOrder(order)
-      expect(newtest.status).toBe(200)}
-     , 150000)
-
-
 
     
